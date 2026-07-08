@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: coffee-shop
+  labels:
+    app: coffee-shop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: coffee-shop
+  template:
+    metadata:
+      labels:
+        app: coffee-shop
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8080"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+      - name: coffee-shop
+        image: ellyson100/coffee-shop:latest  
+        - containerPort: 8080
