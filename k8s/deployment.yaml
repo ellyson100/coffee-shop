@@ -20,5 +20,6 @@ spec:
     spec:
       containers:
       - name: coffee-shop
-        image: ellyson100/coffee-shop:latest  
+        image: ellyson100/coffee-shop:latest
+        ports:
         - containerPort: 8080
