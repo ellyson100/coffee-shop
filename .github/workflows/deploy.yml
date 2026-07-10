@@ -49,3 +49,4 @@ jobs:
           script: |
             sudo k3s kubectl apply -f /home/suporte/k8s/
             sudo k3s kubectl rollout restart deployment coffee-shop
+            
