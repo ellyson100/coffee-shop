@@ -120,7 +120,7 @@ async function processQuery (user: User, req: Request, res: Response, next: Next
 
 function setUserName (user: User, req: Request, res: Response) {
   UserModel.findByPk(user.id).then((user: UserModel | null) => {
-    if (!user) {
+    if (user == null) {
       throw new Error('No such user found!')
     }
     void user.update({ username: req.body.query }).then((updatedUser: UserModel) => {

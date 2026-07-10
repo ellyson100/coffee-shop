@@ -59,7 +59,7 @@ Cypress.Commands.add(
   'login',
   (context: { email: string, password: string, totpSecret?: string }) => {
     cy.visit('/#/login')
-    if (context.email.match(/\S+@\S+\.\S+/)) {
+    if (context.email.match(/\S+@\S+\.\S+/) != null) {
       cy.get('#email').type(context.email)
     } else {
       cy.task('GetFromConfig', 'application.domain').then(
@@ -76,7 +76,7 @@ Cypress.Commands.add(
 )
 
 function walkRecursivelyInArray (arr: Number[], cb: Function, index = 0) {
-  if (!arr.length) return
+  if (arr.length === 0) return
   const ret = cb(index, arr.shift());
   // eslint-disable-next-line @typescript-eslint/prefer-optional-chain
   ((ret && ret.chainerId) ? ret : cy.wrap(ret))
