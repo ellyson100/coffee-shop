@@ -13,5 +13,5 @@ trainings, awareness demos, CTFs and as a guinea pig for security tools! Coffee 
 The MIT License (MIT)
 
 - Copyright © 2014-2023 Bjoern Kimminich & the OWASP Coffee Shop contributors
-- Copyright © 2023 Thaynara Mendes and Samuel Gonçalves
+- Copyright © 2023 Thaynara Mendes and Samuel Gonçalves.
 
